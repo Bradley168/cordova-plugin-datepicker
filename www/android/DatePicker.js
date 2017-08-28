@@ -56,19 +56,19 @@ DatePicker.prototype.show = function(options, cb, errCb) {
 
 	//this._callback = cb;
 
-	var callback = function(message) {
-		if(message != 'error'){
-			var timestamp = Date.parse(message);
-			if(isNaN(timestamp) == false) {
-				cb(new Date(message));
-			}
-	        else {
-	            cb();
-	        }
-		} else {
-			// TODO error popup?
-    	}
-	}
+// 	var callback = function(message) {
+// 		if(message != 'error'){
+// 			var timestamp = Date.parse(message);
+// 			if(isNaN(timestamp) == false) {
+// 				cb(new Date(message));
+// 			}
+// 	        else {
+// 	            cb();
+// 	        }
+// 		} else {
+// 			// TODO error popup?
+//     	}
+// 	}
 
 	var errCallback = function(message) {
 		if (typeof errCb === 'function') {
@@ -76,7 +76,7 @@ DatePicker.prototype.show = function(options, cb, errCb) {
 		}
 	}
 
-	cordova.exec(callback,
+	cordova.exec(cb,
 		errCallback,
 		"DatePickerPlugin",
 		defaults.mode,

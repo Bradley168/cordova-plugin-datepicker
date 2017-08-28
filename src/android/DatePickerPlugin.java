@@ -320,15 +320,15 @@ public class DatePickerPlugin extends CordovaPlugin {
 				return;
 			}
 			
-			calendarDate.set(Calendar.HOUR_OF_DAY, hourOfDay);
-			calendarDate.set(Calendar.MINUTE, minute);
-			calendarDate.set(Calendar.SECOND, 0);
+// 			calendarDate.set(Calendar.HOUR_OF_DAY, hourOfDay);
+// 			calendarDate.set(Calendar.MINUTE, minute);
+// 			calendarDate.set(Calendar.SECOND, 0);
 
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-			sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
-			String toReturn = sdf.format(calendarDate.getTime());
-
-			callbackContext.success(toReturn);
+// 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+// 			sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
+// 			String toReturn = sdf.format(calendarDate.getTime());
+			String time = String.format("%02d", hourOfDay) + ":" + String.format("%02d", minute);
+			callbackContext.success(time);
 		}
 	}
 	
